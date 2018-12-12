@@ -1,8 +1,35 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
+
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import Products from "./pages/Products";
+import TopMenu from "./components/TopMenu";
+
+
+const Index = () => <h2>Home</h2>;
+
+
+function App() {
+    return (
+        <Router>
+            <div className="App">
+            <TopMenu />
+        
+            <Route path="/" exact component={Index} />
+            <Route path="/products/" component={Products} />
+            </div>
+        </Router>
+    );
+}
+
+
+
+
+
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
