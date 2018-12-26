@@ -6,7 +6,7 @@ import AwesomeImage from './components/AwesomeImage';
 import HoverOpacity from './components/HoverOpacity';
 import withHoverOpacity from './components/withHoverOpacity';
 
-const HoverOpacityAwesomeImage = withHoverOpacity(AwesomeImage);
+const HoverOpacityAwesomeImage = withHoverOpacity(AwesomeImage, 0.8);
 
 class App extends Component {
   render() {

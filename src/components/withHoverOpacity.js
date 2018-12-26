@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export default function(WrappedComponent) {
+export default function(WrappedComponent, opacity = 0.5) {
     return class extends Component {
         constructor(props) {
             // console.log(props);  //{src: "https://picsum.photos/200/300"}
@@ -26,7 +26,7 @@ export default function(WrappedComponent) {
             return (
                 <div  
                     style={{
-                        opacity: this.state.isHovered ? 0.5 : 1
+                        opacity: this.state.isHovered ? opacity : 1
                     }}
                     onMouseEnter={this.onMouseEnter.bind(this)}
                     onMouseLeave={this.onMouseLeave.bind(this)}
