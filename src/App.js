@@ -15,7 +15,11 @@ class App extends Component {
       <NumberProvider>
         <div className="App">
             <NumberContext.Consumer>
-              {context => <div>{context}</div>}
+              { ({ number, updateNumber }) => <div>
+                <h1>{number}</h1>
+                <button onClick={updateNumber}>Click me</button>
+                </div>
+              }
             </NumberContext.Consumer>
 
 
