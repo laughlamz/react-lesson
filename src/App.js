@@ -12,8 +12,9 @@ class App extends Component {
       <div className="App">
         <List data={data} render={(item) => <div>{item}</div>} />
         <List data={data} render={(item) => <div> - {item}</div>} />
-        <Counter render={value => <div>{value}</div>} />
-        <Counter render={value => <h1>{value}</h1>} />
+        <Counter>
+          { ({ count }) => <div>{count}</div>}
+        </Counter>
       </div>
     );
   }
