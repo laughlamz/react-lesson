@@ -8,21 +8,23 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Products from "./pages/Products";
 import TopMenu from "./components/TopMenu";
-
+import { CartProvider } from "./contexts/Cart";
 
 const Index = () => <h2>Home</h2>;
 
 
 function App() {
     return (
-        <Router>
-            <div className="App">
-            <TopMenu />
-        
-            <Route path="/" exact component={Index} />
-            <Route path="/products/" component={Products} />
-            </div>
-        </Router>
+        <CartProvider>
+            <Router>
+                <div className="App">
+                <TopMenu />
+            
+                <Route path="/" exact component={Index} />
+                <Route path="/products/" component={Products} />
+                </div>
+            </Router>
+        </CartProvider>
     );
 }
 
