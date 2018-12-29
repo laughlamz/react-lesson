@@ -3,9 +3,10 @@ import './App.css';
 
 import List from './components/List';
 import Counter from './components/Counter';
-import NumberProvider from './components/NumberProvider';
-import NumberContext from './contexts/NumberContext';      // this is quick test
-                                                           // In normal we just use for children(TopNav or Route(cart or ...))
+import {NumberContext} from './contexts/NumberContext';
+import {NumberProvider} from './contexts/NumberContext';
+     // this is quick test
+                                                            // In normal we just use for children(TopNav or Route(cart or ...))
 
 const data = ['A', 'B', 'C'];
 
