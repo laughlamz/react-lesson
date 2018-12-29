@@ -11,13 +11,17 @@ class Counter extends Component {
         this.increaseNumber = this.increaseNumber.bind(this);
     }
 
-    increaseNumber() {                      // two times increase but affect still one times
-        this.setState({
-            count: this.state.count + 1           
+    increaseNumber() {                      // fyi: Event loop - Queue with setTimeout( ,0)
+        this.setState(state => {                // this is state at current time
+            return {
+                count: state.count + 1          // state.count # this.state.count
+            }
         });
 
-        this.setState({
-            count: this.state.count + 1           
+        this.setState(state => {
+            return {
+                count: state.count + 1
+            }
         });
     }
 
