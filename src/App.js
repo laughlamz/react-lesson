@@ -8,6 +8,8 @@ import {NumberProvider} from './contexts/NumberContext';
      // this is quick test
                                                             // In normal we just use for children(TopNav or Route(cart or ...))
 
+import RandomNumber from './components/RandomNumber';
+
 const data = ['A', 'B', 'C'];
 
 class App extends Component {
@@ -15,15 +17,7 @@ class App extends Component {
     return (
       <NumberProvider>
         <div className="App">
-            <NumberContext.Consumer>
-              { ({ number, updateNumber }) => <div>
-                <h1>{number}</h1>
-                <button onClick={updateNumber}>Click me</button>
-                </div>
-              }
-            </NumberContext.Consumer>
-
-
+          <RandomNumber />
           <Counter>
             { ({ count }) => <div>{count}</div>}
           </Counter>
